@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/icons8_menu_96"
         tools:ignore="ImageContrastCheck" />
 
-    <!-- Logo: Bober -->
+
     <TextView
         android:id="@+id/tvLogoBober"
         android:layout_width="wrap_content"
@@ -36,7 +36,6 @@
         app:layout_constraintTop_toTopOf="@+id/btnMenu"
         tools:ignore="TextContrastCheck" />
 
-    <!-- Logo: Eats -->
     <TextView
         android:id="@+id/tvLogoEats"
         android:layout_width="wrap_content"
@@ -50,8 +49,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvLogoBober"
         app:layout_constraintTop_toTopOf="@+id/tvLogoBober" />
-
-    <!-- Slogan: Bober Up -->
     <TextView
         android:id="@+id/tvSloganBober"
         android:layout_width="wrap_content"
@@ -114,7 +111,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
-        android:text="Hallo Gebruiker "
+        android:text="Hallo, Gebruiker "
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         android:textStyle="bold"
@@ -459,5 +456,17 @@
         app:layout_constraintEnd_toEndOf="@+id/navCartIcon"
         app:layout_constraintStart_toStartOf="@+id/navCartIcon"
         app:layout_constraintTop_toBottomOf="@+id/navCartIcon" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.894" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
