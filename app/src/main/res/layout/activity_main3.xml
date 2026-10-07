@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    tools:context=".MainActivity3">
+
+    <!-- Top Bar -->
+    <ImageView
+        android:id="@+id/btnBackCart"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Terug"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_menu_96"
+        app:tint="#212529" />
+
+    <TextView
+        android:id="@+id/tvCartTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Jouw Winkelmand"
+        android:textColor="#212529"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBackCart"
+        app:layout_constraintStart_toEndOf="@+id/btnBackCart"
+        app:layout_constraintTop_toTopOf="@+id/btnBackCart" />
+
+    <!-- Lege Winkelmand Inhoud (Gecentreerd) -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDividerCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartTitle">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:contentDescription="Lege winkelmand icoon"
+            app:srcCompat="@drawable/icons8_cart_48"
+            app:tint="#ADB5BD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Je winkelmand is leeg"
+            android:textColor="#212529"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Het ziet er naar uit dat je nog geen gerechten hebt toegevoegd aan je winkelmand."
+            android:textColor="#6C757D"
+            android:textSize="14sp" />
+
+        <Button
+            android:id="@+id/btnStartShopping"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:backgroundTint="#06C167"
+            android:text="Ontdek restaurants"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Vaste Navigatiebalk onderaan -->
+    <View
+        android:id="@+id/bottomNavBgCart"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/bottomNavDividerCart"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E9ECEF"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBgCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Home Knop -->
+    <LinearLayout
+        android:id="@+id/btnNavHomeCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBgCart"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavSearchCart"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBgCart">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Home"
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Home"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Search Knop -->
+    <LinearLayout
+        android:id="@+id/btnNavSearchCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBgCart"
+        app:layout_constraintEnd_toStartOf="@+id/buttonCartActive"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavHomeCart"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBgCart">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Search"
+            app:srcCompat="@drawable/icons8_search_50"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Search"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Cart Knop (Actief in groen) -->
+    <LinearLayout
+        android:id="@+id/buttonCartActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBgCart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavSearchCart"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBgCart">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Cart actief"
+            app:srcCompat="@drawable/icons8_cart_48"
+            app:tint="#06C167" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Cart"
+            android:textColor="#06C167"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

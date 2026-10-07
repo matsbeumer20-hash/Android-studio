@@ -6,364 +6,352 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F9FA"
-    tools:context=".MainActivity2"
+
     tools:ignore="UseCompoundDrawables,TextContrastCheck,ImageContrastCheck,HardcodedText,UnnecessarySymbol">
 
+    <!-- Terug / Menu knop -->
     <ImageView
-        android:id="@+id/btnMenu"
+        android:id="@+id/btnBack"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="@null"
+        android:contentDescription="Menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/icons8_menu_96"
-        tools:ignore="ImageContrastCheck" />
+        app:tint="#212529" />
 
-    <!-- Logo: Bober -->
+    <!-- Zoekbalk Bovenkant -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSearchInput"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="16dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnBack"
+        app:layout_constraintTop_toTopOf="@+id/btnBack">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:contentDescription="Zoek icoon"
+                app:srcCompat="@drawable/icons8_search_50"
+                app:tint="#06C167" />
+
+            <EditText
+                android:id="@+id/etSearchQuery"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:autofillHints="search"
+                android:background="@android:color/transparent"
+                android:hint="Zoek naar gerechten of restaurants..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:textColor="#212529"
+                android:textColorHint="#5A6268"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Categorieën / Filter chips -->
     <TextView
-        android:id="@+id/tvLogoBober"
+        android:id="@+id/tvCategoriesTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bober"
-        android:textColor="#06C167"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvLogoEats"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnMenu"
-        tools:ignore="TextContrastCheck" />
-
-    <!-- Logo: Eats -->
-    <TextView
-        android:id="@+id/tvLogoEats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Eats"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Populaire categorieën"
         android:textColor="#212529"
-        android:textSize="24sp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvLogoBober"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvLogoBober"
-        app:layout_constraintTop_toTopOf="@+id/tvLogoBober" />
-
-    <!-- Slogan: Bober Up -->
-    <TextView
-        android:id="@+id/tvSloganBober"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Bober"
-        android:textColor="#06C167"
-        android:textSize="11sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toStartOf="@+id/tvSloganUp"
-        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogoBober"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/cardSearchInput" />
 
-    <TextView
-        android:id="@+id/tvSloganUp"
-        android:layout_width="wrap_content"
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:text="Up"
-        android:textColor="#212529"
-        android:textSize="11sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/tvSloganBober"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvSloganBober"
-        app:layout_constraintTop_toTopOf="@+id/tvSloganBober" />
-
-    <TextView
-        android:id="@+id/tvLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text=" Bezorgen in: Hondsrugcollege, Emmen ▾"
-        android:textColor="#495057"
-        android:textSize="12sp"
-        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="12dp"
+        android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSloganBober" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCategoriesTitle">
 
-    <View
-        android:id="@+id/promoBg"
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:background="#06C167"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="Alles"
+                android:textColor="#FFFFFF"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:background="#FFFFFF"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="🍣 Sushi"
+                android:textColor="#212529"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:background="#FFFFFF"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="🥔 Potatoes &amp; Fries"
+                android:textColor="#212529"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="4dp"
+                android:background="#FFFFFF"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="🥗 Healthy"
+                android:textColor="#212529"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Scrollable container voor meerdere zoekresultaten -->
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#06C167"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPromoSub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
-
-    <TextView
-        android:id="@+id/tvPromoTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Hallo, Gebruiker "
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocation"
-        tools:ignore="TextContrastCheck" />
-
-    <TextView
-        android:id="@+id/tvPromoSub"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
         android:paddingBottom="16dp"
-        android:text="Zin in iets lekkers vandaag? Bekijk de beste deals!"
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPromoTitle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvPromoTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromoTitle"
-        tools:ignore="TextContrastCheck" />
-
-    <LinearLayout
-        android:id="@+id/catDeals"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/catHealthy"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/promoBg">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="@null"
-            app:srcCompat="@drawable/icons8_coupon_100" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Deals"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/catHealthy"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/catDeals"
-        app:layout_constraintEnd_toStartOf="@+id/catSupport"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/catDeals"
-        app:layout_constraintTop_toTopOf="@+id/catDeals">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="@null"
-            app:srcCompat="@drawable/icons8_salad_64" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Healthy"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/catSupport"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/catHealthy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/catHealthy"
-        app:layout_constraintTop_toTopOf="@+id/catHealthy">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="@null"
-            app:srcCompat="@drawable/icons8_support_96" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Support"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvPopulaireTitel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Populaire Restaurants "
-        android:textColor="#212529"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catDeals" />
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardRestaurant1"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:padding="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPopulaireTitel">
+        app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
 
-        <ImageView
-            android:id="@+id/imgUmi"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="@null"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956"
-            tools:ignore="ImageContrastCheck" />
-
-        <TextView
-            android:id="@+id/tvUmiTitle"
-            android:layout_width="0dp"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Umi Sushi Bar"
-            android:textColor="#212529"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgUmi"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
 
-        <TextView
-            android:id="@+id/tvUmiDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="★ 4.8 (1,240+) • 15-25 min • Gratis bezorging"
-            android:textColor="#495057"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvUmiTitle" />
+            <TextView
+                android:id="@+id/tvResultsTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="Recente &amp; Aanbevolen Zoekopdrachten"
+                android:textColor="#212529"
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvUmiReview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="&quot;Best fresh rolls in town! — Local Favorite.&quot;"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvUmiDetails" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            <!-- Resultaat 1: Umi Sushi Bar -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardRestaurant2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardRestaurant1">
+                <ImageView
+                    android:id="@+id/imgResult1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="Umi Sushi Bar afbeelding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956" />
 
-        <ImageView
-            android:id="@+id/imgSpud"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="@null"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328"
-            tools:ignore="ImageContrastCheck" />
+                <TextView
+                    android:id="@+id/tvResult1Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Umi Sushi Bar"
+                    android:textColor="#212529"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgResult1"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/tvSpudTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="The Daily Spud"
-            android:textColor="#212529"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgSpud"
-            app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.8 • 15-25 min • Populaire Sushi"
+                    android:textColor="#383F45"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvResult1Title"
+                    app:layout_constraintTop_toBottomOf="@+id/tvResult1Title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/tvSpudDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="★ 4.7 (850+) • 20-30 min • €1,99 bezorging"
-            android:textColor="#495057"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpudTitle" />
+            <!-- Resultaat 2: The Daily Spud -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
 
-        <TextView
-            android:id="@+id/tvSpudDesc"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Crispy, loaded baked potatoes and gourmet fries."
-            android:textColor="#212529"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpudDetails" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/imgResult2"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="The Daily Spud afbeelding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328" />
 
+                <TextView
+                    android:id="@+id/tvResult2Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="The Daily Spud"
+                    android:textColor="#212529"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgResult2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.7 • 20-30 min • Loaded Fries &amp; Potatoes"
+                    android:textColor="#383F45"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvResult2Title"
+                    app:layout_constraintTop_toBottomOf="@+id/tvResult2Title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Resultaat 3: Green House Salad -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgResult3"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="Green House Salad afbeelding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/xpyac76kb7_1169372836" />
+
+                <TextView
+                    android:id="@+id/tvResult3Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Green House Salad"
+                    android:textColor="#212529"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgResult3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.9 • 10-20 min • Fresh Salads &amp; Grain Bowls"
+                    android:textColor="#383F45"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvResult3Title"
+                    app:layout_constraintTop_toBottomOf="@+id/tvResult3Title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Resultaat 4: Burger Master -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgResult4"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:contentDescription="Burger Master afbeelding"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/foodmaster1" />
+
+                <TextView
+                    android:id="@+id/tvResult4Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Burger Master"
+                    android:textColor="#212529"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgResult4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.6 • 25-35 min • Burgers &amp; Snacks"
+                    android:textColor="#383F45"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvResult4Title"
+                    app:layout_constraintTop_toBottomOf="@+id/tvResult4Title" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Vaste Navigatiebalk onderaan -->
     <View
         android:id="@+id/bottomNavBg"
         android:layout_width="0dp"
@@ -382,94 +370,109 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/navHomeIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="6dp"
-        android:contentDescription="@null"
-        app:layout_constraintEnd_toStartOf="@+id/navSearchIcon"
+    <!-- Home Knop (Visueel) -->
+    <LinearLayout
+        android:id="@+id/btnNavHome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSearchActive"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg"
-        app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
-        app:tint="#06C167"
-        tools:ignore="ImageContrastCheck" />
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
 
-    <TextView
-        android:id="@+id/navHomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Home"
-        android:textColor="#06C167"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/navHomeIcon"
-        app:layout_constraintStart_toStartOf="@+id/navHomeIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navHomeIcon"
-        tools:ignore="TextContrastCheck" />
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Home icoon"
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
+            app:tint="#212529" />
 
-    <ImageView
-        android:id="@+id/navSearchIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/navHomeIcon"
-        app:layout_constraintEnd_toStartOf="@+id/navCartIcon"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/navHomeIcon"
-        app:layout_constraintTop_toTopOf="@+id/navHomeIcon"
-        app:srcCompat="@drawable/icons8_search_50"
-        app:tint="#212529" />
-
-    <TextView
-        android:id="@+id/navSearchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Search"
-        android:textColor="#212529"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/navSearchIcon"
-        app:layout_constraintStart_toStartOf="@+id/navSearchIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navSearchIcon" />
-
-    <ImageView
-        android:id="@+id/navCartIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/navSearchIcon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/navSearchIcon"
-        app:layout_constraintTop_toTopOf="@+id/navSearchIcon"
-        app:srcCompat="@drawable/icons8_cart_48"
-        app:tint="#212529" />
-
-    <TextView
-        android:id="@+id/navCartText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Cart"
-        android:textColor="#212529"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/navCartIcon"
-        app:layout_constraintStart_toStartOf="@+id/navCartIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navCartIcon" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Home"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Terug"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSearchActive"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.904" />
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg" />
+
+    <!-- Search Knop (Actief in groen) -->
+    <LinearLayout
+        android:id="@+id/buttonSearchActive"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavCart"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavHome"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Search icoon actief"
+            app:srcCompat="@drawable/icons8_search_50"
+            app:tint="#06C167" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Search"
+            android:textColor="#06C167"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Cart Knop -->
+    <LinearLayout
+        android:id="@+id/btnNavCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@+id/buttonSearchActive"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Cart icoon"
+            app:srcCompat="@drawable/icons8_cart_48"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Cart"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
