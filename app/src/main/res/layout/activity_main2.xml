@@ -6,10 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F9FA"
+    tools:context=".MainActivity2">
 
-    tools:ignore="UseCompoundDrawables,TextContrastCheck,ImageContrastCheck,HardcodedText,UnnecessarySymbol">
-
-    <!-- Terug / Menu knop -->
     <ImageView
         android:id="@+id/btnBack"
         android:layout_width="32dp"
@@ -22,7 +20,6 @@
         app:srcCompat="@drawable/icons8_menu_96"
         app:tint="#212529" />
 
-    <!-- Zoekbalk Bovenkant -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardSearchInput"
         android:layout_width="0dp"
@@ -55,8 +52,8 @@
                 android:id="@+id/etSearchQuery"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:layout_marginStart="10dp"
+                android:layout_weight="1"
                 android:autofillHints="search"
                 android:background="@android:color/transparent"
                 android:hint="Zoek naar gerechten of restaurants..."
@@ -68,7 +65,6 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <!-- Categorieën / Filter chips -->
     <TextView
         android:id="@+id/tvCategoriesTitle"
         android:layout_width="wrap_content"
@@ -149,14 +145,13 @@
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- Scrollable container voor meerdere zoekresultaten -->
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:clipToPadding="false"
         android:paddingBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView">
@@ -177,7 +172,6 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Resultaat 1: Umi Sushi Bar -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -189,7 +183,7 @@
                     android:id="@+id/imgResult1"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:contentDescription="Umi Sushi Bar afbeelding"
+                    android:contentDescription="Umi Sushi Bar"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -220,7 +214,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvResult1Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Resultaat 2: The Daily Spud -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -232,7 +225,7 @@
                     android:id="@+id/imgResult2"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:contentDescription="The Daily Spud afbeelding"
+                    android:contentDescription="The Daily Spud"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -263,7 +256,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvResult2Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <!-- Resultaat 3: Green House Salad -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -275,7 +267,7 @@
                     android:id="@+id/imgResult3"
                     android:layout_width="60dp"
                     android:layout_height="60dp"
-                    android:contentDescription="Green House Salad afbeelding"
+                    android:contentDescription="Green House Salad"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
@@ -298,62 +290,19 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="★ 4.9 • 10-20 min • Fresh Salads &amp; Grain Bowls"
+                    android:text="★ 4.6 • 25-35 min • Fresh Salads &amp; Grain Bowls"
                     android:textColor="#383F45"
                     android:textSize="12sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tvResult3Title"
                     app:layout_constraintTop_toBottomOf="@+id/tvResult3Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <!-- Resultaat 4: Burger Master -->
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="#FFFFFF"
-                android:padding="12dp">
-
-                <ImageView
-                    android:id="@+id/imgResult4"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:contentDescription="Burger Master afbeelding"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/foodmaster1" />
-
-                <TextView
-                    android:id="@+id/tvResult4Title"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:text="Burger Master"
-                    android:textColor="#212529"
-                    android:textSize="15sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/imgResult4"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="2dp"
-                    android:text="★ 4.6 • 25-35 min • Burgers &amp; Snacks"
-                    android:textColor="#383F45"
-                    android:textSize="12sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="@+id/tvResult4Title"
-                    app:layout_constraintTop_toBottomOf="@+id/tvResult4Title" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
         </LinearLayout>
     </ScrollView>
 
     <!-- Vaste Navigatiebalk onderaan -->
     <View
-        android:id="@+id/bottomNavBg"
+        android:id="@+id/bottomNavBg2"
         android:layout_width="0dp"
         android:layout_height="64dp"
         android:background="#FFFFFF"
@@ -362,31 +311,30 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <View
-        android:id="@+id/bottomNavDivider"
+        android:id="@+id/bottomNavDivider2"
         android:layout_width="0dp"
         android:layout_height="1dp"
         android:background="#E9ECEF"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavBg"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBg2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!-- Home Knop (Visueel) -->
     <LinearLayout
-        android:id="@+id/btnNavHome"
+        android:id="@+id/btnNavHome2"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSearchActive"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg2"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavSearch2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg2">
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:contentDescription="Home icoon"
+            android:contentDescription="Home"
             app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
             app:tint="#212529" />
 
@@ -399,37 +347,22 @@
             android:textSize="12sp" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        android:importantForAccessibility="no"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
-        app:layout_constraintEnd_toStartOf="@+id/buttonSearchActive"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg" />
-
-    <!-- Search Knop (Actief in groen) -->
     <LinearLayout
-        android:id="@+id/buttonSearchActive"
+        android:id="@+id/btnNavSearch2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:focusable="true"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
-        app:layout_constraintEnd_toStartOf="@+id/btnNavCart"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg2"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavCart2"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnNavHome"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+        app:layout_constraintStart_toEndOf="@+id/btnNavHome2"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg2">
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:contentDescription="Search icoon actief"
+            android:contentDescription="Search"
             app:srcCompat="@drawable/icons8_search_50"
             app:tint="#06C167" />
 
@@ -443,26 +376,22 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <!-- Cart Knop -->
     <LinearLayout
-        android:id="@+id/btnNavCart"
+        android:id="@+id/btnNavCart2"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:clickable="true"
-        android:focusable="true"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
-        app:layout_constraintStart_toEndOf="@+id/buttonSearchActive"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavSearch2"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg2">
 
         <ImageView
             android:layout_width="28dp"
             android:layout_height="28dp"
-            android:contentDescription="Cart icoon"
+            android:contentDescription="Cart"
             app:srcCompat="@drawable/icons8_cart_48"
             app:tint="#212529" />
 

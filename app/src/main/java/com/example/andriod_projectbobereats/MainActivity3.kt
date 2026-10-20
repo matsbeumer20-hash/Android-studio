@@ -22,19 +22,19 @@ class MainActivity3 : AppCompatActivity() {
         }
 
         val btnStartShopping = findViewById<Button>(R.id.btnStartShopping)
-        btnStartShopping.setOnClickListener {
+        btnStartShopping?.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
 
-        val btnNavHomeCart = findViewById<LinearLayout>(R.id.btnNavHomeCart)
-        btnNavHomeCart.setOnClickListener {
+        val btnNavHome = findViewById<LinearLayout>(R.id.btnNavHome3)
+        btnNavHome?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
-        val btnNavSearchCart = findViewById<LinearLayout>(R.id.btnNavSearchCart)
-        btnNavSearchCart.setOnClickListener {
+        val btnNavSearch = findViewById<LinearLayout>(R.id.btnNavSearch3)
+        btnNavSearch?.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }

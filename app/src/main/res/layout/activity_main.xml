@@ -6,8 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F9FA"
-    tools:context=".MainActivity2"
-    tools:ignore="UseCompoundDrawables,TextContrastCheck,ImageContrastCheck,HardcodedText,UnnecessarySymbol">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/btnMenu"
@@ -15,11 +14,10 @@
         android:layout_height="32dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        android:contentDescription="@null"
+        android:contentDescription="Menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icons8_menu_96"
-        tools:ignore="ImageContrastCheck" />
+        app:srcCompat="@drawable/icons8_menu_96" />
 
     <TextView
         android:id="@+id/tvLogoBober"
@@ -32,8 +30,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tvLogoEats"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnMenu"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toTopOf="@+id/btnMenu" />
 
     <TextView
         android:id="@+id/tvLogoEats"
@@ -61,8 +58,7 @@
         app:layout_constraintEnd_toStartOf="@+id/tvSloganUp"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogoBober"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLogoBober" />
 
     <TextView
         android:id="@+id/tvSloganUp"
@@ -118,8 +114,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocation"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
 
     <TextView
         android:id="@+id/tvPromoSub"
@@ -133,8 +128,7 @@
         app:layout_constraintEnd_toEndOf="@+id/tvPromoTitle"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/tvPromoTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromoTitle"
-        tools:ignore="TextContrastCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/tvPromoTitle" />
 
     <LinearLayout
         android:id="@+id/catDeals"
@@ -152,7 +146,7 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:contentDescription="@null"
+            android:contentDescription="Deals"
             app:srcCompat="@drawable/icons8_coupon_100" />
 
         <TextView
@@ -181,7 +175,7 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:contentDescription="@null"
+            android:contentDescription="Healthy"
             app:srcCompat="@drawable/icons8_salad_64" />
 
         <TextView
@@ -210,7 +204,7 @@
         <ImageView
             android:layout_width="36dp"
             android:layout_height="36dp"
-            android:contentDescription="@null"
+            android:contentDescription="Support"
             app:srcCompat="@drawable/icons8_support_96" />
 
         <TextView
@@ -253,12 +247,11 @@
             android:id="@+id/imgUmi"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@null"
+            android:contentDescription="Umi"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956"
-            tools:ignore="ImageContrastCheck" />
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956" />
 
         <TextView
             android:id="@+id/tvUmiTitle"
@@ -316,12 +309,11 @@
             android:id="@+id/imgSpud"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:contentDescription="@null"
+            android:contentDescription="Spud"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328"
-            tools:ignore="ImageContrastCheck" />
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328" />
 
         <TextView
             android:id="@+id/tvSpudTitle"
@@ -361,6 +353,7 @@
             app:layout_constraintTop_toBottomOf="@+id/tvSpudDetails" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <!-- Vaste Navigatiebalk onderaan -->
     <View
         android:id="@+id/bottomNavBg"
         android:layout_width="0dp"
@@ -379,92 +372,89 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/navHomeIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="6dp"
-        android:contentDescription="@null"
-        app:layout_constraintEnd_toStartOf="@+id/navSearchIcon"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/bottomNavBg"
-        app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
-        app:tint="#06C167"
-        tools:ignore="ImageContrastCheck" />
-
-    <TextView
-        android:id="@+id/navHomeText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Home"
-        android:textColor="#06C167"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/navHomeIcon"
-        app:layout_constraintStart_toStartOf="@+id/navHomeIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navHomeIcon"
-        tools:ignore="TextContrastCheck" />
-
-    <ImageView
-        android:id="@+id/navSearchIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/navHomeIcon"
-        app:layout_constraintEnd_toStartOf="@+id/navCartIcon"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/navHomeIcon"
-        app:layout_constraintTop_toTopOf="@+id/navHomeIcon"
-        app:srcCompat="@drawable/icons8_search_50"
-        app:tint="#212529" />
-
-    <TextView
-        android:id="@+id/navSearchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Search"
-        android:textColor="#212529"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/navSearchIcon"
-        app:layout_constraintStart_toStartOf="@+id/navSearchIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navSearchIcon" />
-
-    <ImageView
-        android:id="@+id/navCartIcon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:contentDescription="@null"
-        app:layout_constraintBottom_toBottomOf="@+id/navSearchIcon"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/navSearchIcon"
-        app:layout_constraintTop_toTopOf="@+id/navSearchIcon"
-        app:srcCompat="@drawable/icons8_cart_48"
-        app:tint="#212529" />
-
-    <TextView
-        android:id="@+id/navCartText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Cart"
-        android:textColor="#212529"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/navCartIcon"
-        app:layout_constraintStart_toStartOf="@+id/navCartIcon"
-        app:layout_constraintTop_toBottomOf="@+id/navCartIcon" />
-
-    <Button
-        android:id="@+id/button"
+    <LinearLayout
+        android:id="@+id/btnNavHome1"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/transparent"
-        app:layout_constraintBottom_toBottomOf="@+id/navSearchText"
-        app:layout_constraintEnd_toEndOf="@+id/navSearchIcon"
-        app:layout_constraintStart_toStartOf="@+id/navSearchIcon"
-        app:layout_constraintTop_toTopOf="@+id/navSearchIcon" />
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavSearch1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Home"
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
+            app:tint="#06C167" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Home"
+            android:textColor="#06C167"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnNavSearch1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavCart1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavHome1"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Search"
+            app:srcCompat="@drawable/icons8_search_50"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Search"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnNavCart1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavSearch1"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Cart"
+            app:srcCompat="@drawable/icons8_cart_48"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Cart"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
