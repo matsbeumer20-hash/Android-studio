@@ -33,12 +33,15 @@
         app:layout_constraintStart_toEndOf="@+id/btnBackCart"
         app:layout_constraintTop_toTopOf="@+id/btnBackCart" />
 
+    <!-- Lege status (wordt verborgen als er items zijn) -->
     <LinearLayout
+        android:id="@+id/layoutEmptyCart"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="32dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,10 +66,69 @@
         <Button
             android:id="@+id/btnStartShopping"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginTop="24dp"
             android:backgroundTint="#06C167"
+            android:minHeight="48dp"
             android:text="Ontdek restaurants"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Gevulde status (wordt getoond als er items zijn) -->
+    <LinearLayout
+        android:id="@+id/layoutFilledCart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvCartTitle">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/cartItemsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/tvTotalPrice"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Totaal: €0,00"
+            android:textColor="#212529"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnCheckout"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#06C167"
+            android:minHeight="48dp"
+            android:text="Bestellen"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnDeleteOrder"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="#DC3545"
+            android:minHeight="48dp"
+            android:text="Verwijder bestelling"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
     </LinearLayout>

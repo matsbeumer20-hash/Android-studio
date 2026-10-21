@@ -20,13 +20,21 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val btnNavSearch = findViewById<LinearLayout>(R.id.btnNavSearch1)
+        // Klik op Umi Sushi Bar kaart om naar MainActivity4 te gaan
+        val cardUmiSushi = findViewById<androidx.constraintlayout.widget.ConstraintLayout>(R.id.cardUmiSushi)
+        cardUmiSushi?.setOnClickListener {
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
+        }
+
+        // Onderste navigatiebalk logica
+        val btnNavSearch = findViewById<LinearLayout>(R.id.btnNavSearch)
         btnNavSearch?.setOnClickListener {
             val intent = Intent(this, MainActivity2::class.java)
             startActivity(intent)
         }
 
-        val btnNavCart = findViewById<LinearLayout>(R.id.btnNavCart1)
+        val btnNavCart = findViewById<LinearLayout>(R.id.btnNavCart)
         btnNavCart?.setOnClickListener {
             val intent = Intent(this, MainActivity3::class.java)
             startActivity(intent)

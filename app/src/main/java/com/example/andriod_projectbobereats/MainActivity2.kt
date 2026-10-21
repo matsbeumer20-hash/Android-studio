@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.LinearLayout
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
@@ -20,10 +21,20 @@ class MainActivity2 : AppCompatActivity() {
             insets
         }
 
+        val cardResultUmi = findViewById<ConstraintLayout>(R.id.cardResultUmi)
+        cardResultUmi?.setOnClickListener {
+            val intent = Intent(this, MainActivity4::class.java)
+            startActivity(intent)
+        }
+
         val btnNavHome = findViewById<LinearLayout>(R.id.btnNavHome2)
         btnNavHome?.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        val btnNavSearch = findViewById<LinearLayout>(R.id.btnNavSearch2)
+        btnNavSearch?.setOnClickListener {
         }
 
         val btnNavCart = findViewById<LinearLayout>(R.id.btnNavCart2)
