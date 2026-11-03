@@ -8,350 +8,435 @@
     android:background="#F8F9FA"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/btnMenu"
-        android:layout_width="32dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="Menu"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/icons8_menu_96" />
-
-    <TextView
-        android:id="@+id/tvLogoBober"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Bober"
-        android:textColor="#06C167"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/tvLogoEats"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/btnMenu" />
-
-    <TextView
-        android:id="@+id/tvLogoEats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:text="Eats"
-        android:textColor="#212529"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/tvLogoBober"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvLogoBober"
-        app:layout_constraintTop_toTopOf="@+id/tvLogoBober" />
-
-    <TextView
-        android:id="@+id/tvSloganBober"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
-        android:text="Bober"
-        android:textColor="#06C167"
-        android:textSize="11sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintEnd_toStartOf="@+id/tvSloganUp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogoBober" />
-
-    <TextView
-        android:id="@+id/tvSloganUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
-        android:text="Up"
-        android:textColor="#212529"
-        android:textSize="11sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/tvSloganBober"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvSloganBober"
-        app:layout_constraintTop_toTopOf="@+id/tvSloganBober" />
-
-    <TextView
-        android:id="@+id/tvLocation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text=" Bezorgen in: Hondsrugcollege, Emmen "
-        android:textColor="#495057"
-        android:textSize="12sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSloganBober" />
-
-    <View
-        android:id="@+id/promoBg"
+    <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#06C167"
-        app:layout_constraintBottom_toBottomOf="@+id/tvPromoSub"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
-
-    <TextView
-        android:id="@+id/tvPromoTitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:text="Hallo, Gebruiker "
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
-
-    <TextView
-        android:id="@+id/tvPromoSub"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:clipToPadding="false"
         android:paddingBottom="16dp"
-        android:text="Zin in iets lekkers vandaag? BoberEats heeft het."
-        android:textColor="#FFFFFF"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="@+id/tvPromoTitle"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/tvPromoTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvPromoTitle" />
-
-    <LinearLayout
-        android:id="@+id/catDeals"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="16dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toStartOf="@+id/catHealthy"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/promoBg">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="Deals"
-            app:srcCompat="@drawable/icons8_coupon_100" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Deals"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/catHealthy"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/catDeals"
-        app:layout_constraintEnd_toStartOf="@+id/catSupport"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/catDeals"
-        app:layout_constraintTop_toTopOf="@+id/catDeals">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="Healthy"
-            app:srcCompat="@drawable/icons8_salad_64" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Healthy"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/catSupport"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:background="#FFFFFF"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/catHealthy"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/catHealthy"
-        app:layout_constraintTop_toTopOf="@+id/catHealthy">
-
-        <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:contentDescription="Support"
-            app:srcCompat="@drawable/icons8_support_96" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="Support"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="bold" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/tvPopulaireTitel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:text="Populaire Restaurants "
-        android:textColor="#212529"
-        android:textSize="18sp"
-        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/catDeals" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardRestaurant1"
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Top Header met Menu Knop -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <ImageView
+                    android:id="@+id/btnMenu"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="Menu"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/icons8_menu_96"
+                    app:tint="#06C167" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/tvLogoBober"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bober Eats"
+                        android:textColor="#212529"
+                        android:textSize="22sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSloganBober"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bober Up"
+                        android:textColor="#06C167"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Bezorglocatie -->
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingBottom="12dp"
+                android:text=" Bezorgen in: Hondsrugcollege, Emmen "
+                android:textColor="#495057"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Welkomstbanner -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="#06C167"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvPromoTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hallo, Gast"
+                    android:textColor="#FFFFFF"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvPromoSub"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Zin in iets lekkers vandaag? BoberEats heeft het."
+                    android:textColor="#FFFFFF"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <!-- Populaire Restaurants Titel -->
+            <TextView
+                android:id="@+id/tvPopulaireTitel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:text="Populaire Restaurants"
+                android:textColor="#212529"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <!-- Restaurant Kaart 1: Umi Sushi Bar -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardRestaurant1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgUmi"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Umi"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956" />
+
+                <TextView
+                    android:id="@+id/tvUmiTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Umi Sushi Bar"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgUmi"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvUmiDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.8 (1,240+) • 15-25 min • Gratis bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUmiTitle" />
+
+                <TextView
+                    android:id="@+id/tvUmiReview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="“Best fresh rolls in town! — Local Favorite.”"
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    android:textStyle="italic"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvUmiDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Restaurant Kaart 2: The Daily Spud -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardRestaurant2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgSpud"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Spud"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328" />
+
+                <TextView
+                    android:id="@+id/tvSpudTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="The Daily Spud"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgSpud"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSpudDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.7 (850+) • 20-30 min • €1,99 bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpudTitle" />
+
+                <TextView
+                    android:id="@+id/tvSpudDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Crispy, loaded baked potatoes and gourmet fries."
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSpudDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Restaurant Kaart 3: Green House Salad -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardRestaurant3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgSalad"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:contentDescription="Salad"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/xpyac76kb7_1169372836" />
+
+                <TextView
+                    android:id="@+id/tvSaladTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Green House Salad"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgSalad"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvSaladDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.6 (520+) • 25-35 min • €1,49 bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvSaladTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSaladTitle" />
+
+                <TextView
+                    android:id="@+id/tvSaladDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Fresh salads, healthy bowls, and organic dressings."
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvSaladTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvSaladDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Donkere achtergrondlaag voor het zijmenu -->
+    <View
+        android:id="@+id/viewOverlay"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:padding="12dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:elevation="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPopulaireTitel">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/imgUmi"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="Umi"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_111956" />
+    <!-- Uitschuifbaar Zijmenu (loopt helemaal tot onderaan) -->
+    <LinearLayout
+        android:id="@+id/layoutSideMenu"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:translationX="-300dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- Menu Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="#06C167"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bober Eats"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Menu Opties"
+                android:textColor="#E9ECEF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- Menu Optie: Inloggen -->
         <TextView
-            android:id="@+id/tvUmiTitle"
-            android:layout_width="0dp"
+            android:id="@+id/menuLogin"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="Umi Sushi Bar"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Inloggen"
             android:textColor="#212529"
             android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgUmi"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F3F5" />
+
+        <!-- Menu Optie: Account aanmaken -->
         <TextView
-            android:id="@+id/tvUmiDetails"
-            android:layout_width="0dp"
+            android:id="@+id/menuAccount"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="★ 4.8 (1,240+) • 15-25 min • Gratis bezorging"
-            android:textColor="#495057"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvUmiTitle" />
-
-        <TextView
-            android:id="@+id/tvUmiReview"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="&quot;Best fresh rolls in town! — Local Favorite.&quot;"
-            android:textColor="#212529"
-            android:textSize="12sp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvUmiTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvUmiDetails" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cardRestaurant2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FFFFFF"
-        android:padding="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardRestaurant1">
-
-        <ImageView
-            android:id="@+id/imgSpud"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:contentDescription="Spud"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/schermafbeelding_2026_09_29_113328" />
-
-        <TextView
-            android:id="@+id/tvSpudTitle"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="12dp"
-            android:text="The Daily Spud"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Account aanmaken"
             android:textColor="#212529"
             android:textSize="16sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgSpud"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/tvSpudDetails"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="2dp"
-            android:text="★ 4.7 (850+) • 20-30 min • €1,99 bezorging"
-            android:textColor="#495057"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpudTitle" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F3F5" />
 
+        <!-- Menu Optie: Bober pas -->
         <TextView
-            android:id="@+id/tvSpudDesc"
-            android:layout_width="0dp"
+            android:id="@+id/menuBoberPas"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="6dp"
-            android:text="Crispy, loaded baked potatoes and gourmet fries."
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Bober pas"
             android:textColor="#212529"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/tvSpudTitle"
-            app:layout_constraintTop_toBottomOf="@+id/tvSpudDetails" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#F1F3F5" />
+
+        <!-- Menu Optie: Uitloggen -->
+        <TextView
+            android:id="@+id/menuLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Uitloggen"
+            android:textColor="#DC3545"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
 
     <!-- Vaste Navigatiebalk onderaan -->
     <View

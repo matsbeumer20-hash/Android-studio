@@ -103,15 +103,19 @@
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 android:text="Alles"
-                android:textColor="#FFFFFF"
+                android:textColor="#4E342E"
                 android:textSize="12sp"
                 android:textStyle="bold" />
 
+            <!-- Klikbare Sushi Categorie met ID -->
             <TextView
+                android:id="@+id/catSushiSearch"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="4dp"
                 android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true"
                 android:paddingHorizontal="16dp"
                 android:paddingVertical="8dp"
                 android:text="🍣 Sushi"
@@ -172,13 +176,15 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <!-- Umi Sushi Bar kaart met cardResultUmi ID -->
+            <!-- Restaurant 1: Umi Sushi Bar -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardResultUmi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
                 android:background="#FFFFFF"
+                android:clickable="true"
+                android:focusable="true"
                 android:padding="12dp">
 
                 <ImageView
@@ -216,6 +222,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvResult1Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Restaurant 2: The Daily Spud -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -258,6 +265,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/tvResult2Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <!-- Restaurant 3: Green House Salad -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -299,6 +307,7 @@
                     app:layout_constraintStart_toStartOf="@+id/tvResult3Title"
                     app:layout_constraintTop_toBottomOf="@+id/tvResult3Title" />
             </androidx.constraintlayout.widget.ConstraintLayout>
+
         </LinearLayout>
     </ScrollView>
 
