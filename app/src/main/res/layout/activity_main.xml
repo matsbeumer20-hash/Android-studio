@@ -31,9 +31,12 @@
 
                 <ImageView
                     android:id="@+id/btnMenu"
-                    android:layout_width="32dp"
-                    android:layout_height="32dp"
-                    android:layout_marginStart="8dp"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="8dp"
+                    android:layout_marginStart="4dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     android:contentDescription="Menu"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -256,7 +259,6 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="16dp"
-                android:layout_marginBottom="16dp"
                 android:background="#FFFFFF"
                 android:padding="12dp">
 
@@ -303,9 +305,191 @@
                     android:text="Fresh salads, healthy bowls, and organic dressings."
                     android:textColor="#212529"
                     android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/tvSaladTitle"
                     app:layout_constraintTop_toBottomOf="@+id/tvSaladDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Restaurant Kaart 4: Burger House -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgBurger"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Burger House"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/p_10best_smuneighborhood_burger_house_55_660x440_1705417098" />
+
+                <TextView
+                    android:id="@+id/tvBurgerTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Burger House"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgBurger"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvBurgerDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.5 (430+) • 15-25 min • €1,99 bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvBurgerTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBurgerTitle" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Juicy gourmet burgers and crispy seasoned fries."
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvBurgerTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBurgerDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Restaurant Kaart 5: Pizzeria Massa -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgPizza"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Pizzeria Massa"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/pizzaria_massa_de_rua_2982143680" />
+
+                <TextView
+                    android:id="@+id/tvPizzaTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Pizzeria Massa"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgPizza"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvPizzaDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.7 (610+) • 20-30 min • Gratis bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvPizzaTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPizzaTitle" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Authentic Italian wood-fired pizzas and calzones."
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvPizzaTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPizzaDetails" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Restaurant Kaart 6: Bober Bowl & Grill -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="#FFFFFF"
+                android:padding="12dp">
+
+                <ImageView
+                    android:id="@+id/imgGrill"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:scaleType="centerCrop"
+                    android:contentDescription="Bober Bowl &amp; Grill"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/img_1501_1175283012" />
+
+                <TextView
+                    android:id="@+id/tvGrillTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:text="Bober Bowl &amp; Grill"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/imgGrill"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvGrillDetails"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:text="★ 4.9 (980+) • 15-30 min • €1,00 bezorging"
+                    android:textColor="#495057"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvGrillTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGrillTitle" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="Hearty rice bowls, grilled specials, and tasty sides."
+                    android:textColor="#212529"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/tvGrillTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/tvGrillDetails" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -325,7 +509,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Uitschuifbaar Zijmenu (loopt helemaal tot onderaan) -->
+    <!-- Uitschuifbaar Zijmenu -->
     <LinearLayout
         android:id="@+id/layoutSideMenu"
         android:layout_width="280dp"

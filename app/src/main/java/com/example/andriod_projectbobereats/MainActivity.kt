@@ -87,9 +87,9 @@ class MainActivity : AppCompatActivity() {
             toggleMenu()
         }
 
-        // Klik op Bober pas
+        // Klik op Bober pas -> Ga naar MainActivity8
         findViewById<TextView>(R.id.menuBoberPas)?.setOnClickListener {
-            Toast.makeText(this, "Bober pas aangeklikt", Toast.LENGTH_SHORT).show()
+            startActivity(Intent(this, MainActivity8::class.java))
             toggleMenu()
         }
 

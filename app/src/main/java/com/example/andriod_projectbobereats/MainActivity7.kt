@@ -32,29 +32,30 @@ class MainActivity7 : AppCompatActivity() {
             val emailInput = etLoginEmail?.text.toString().trim()
             val passwordInput = etLoginPassword?.text.toString().trim()
 
-            // Haal de opgeslagen gegevens op uit SharedPreferences
-            val sharedPreferences = getSharedPreferences("BoberPrefs", Context.MODE_PRIVATE)
-            val registeredEmail = sharedPreferences.getString("USER_EMAIL", null)
-            val registeredName = sharedPreferences.getString("USER_NAME", "Gebruiker")
-
             if (emailInput.isEmpty() || passwordInput.isEmpty()) {
                 Toast.makeText(this, "Vul alle velden in.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
-            // Controleer of er überhaupt een account bekend is
-            if (registeredEmail == null) {
+            // Haal opgeslagen gegevens op
+            val sharedPreferences = getSharedPreferences("BoberPrefs", Context.MODE_PRIVATE)
+            val registeredEmail = sharedPreferences.getString("USER_EMAIL", null)
+            val registeredPassword = sharedPreferences.getString("USER_PASSWORD", null)
+            val registeredName = sharedPreferences.getString("USER_NAME", "Gebruiker")
+
+            // Controleer of er überhaupt een account bestaat
+            if (registeredEmail == null || registeredPassword == null) {
                 Toast.makeText(this, "Geen account gevonden. Maak eerst een account aan!", Toast.LENGTH_LONG).show()
                 startActivity(Intent(this, MainActivity6::class.java))
                 finish()
                 return@setOnClickListener
             }
 
-            // Check of het ingevoerde e-mailadres overeenkomt
-            if (emailInput.equals(registeredEmail, ignoreCase = true)) {
+            // Controleer of e-mail én wachtwoord kloppen
+            if (emailInput.equals(registeredEmail, ignoreCase = true) && passwordInput == registeredPassword) {
                 Toast.makeText(this, "Welkom terug, $registeredName!", Toast.LENGTH_LONG).show()
 
-                // Ga terug naar de homepagina
+                // Ga naar de homepagina
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()

@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F8F9FA"
+    tools:context=".MainActivity10">
+
+    <!-- Header met menuknop -->
+    <ImageView
+        android:id="@+id/btnBackPayment"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:padding="8dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:contentDescription="Menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icons8_menu_96"
+        app:tint="#06C167" />
+
+    <TextView
+        android:id="@+id/tvPaymentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Overzicht &amp; Betaling"
+        android:textColor="#212529"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/btnBackPayment"
+        app:layout_constraintStart_toEndOf="@+id/btnBackPayment"
+        app:layout_constraintTop_toTopOf="@+id/btnBackPayment" />
+
+    <!-- Inhoud / Kostenoverzicht -->
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavDivider10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackPayment">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <!-- Kostenoverzicht Kaart -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="vertical"
+                android:padding="20dp"
+                android:elevation="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Kostenoverzicht"
+                    android:textColor="#212529"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <!-- Subtotaal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Subtotaal producten"
+                        android:textColor="#495057" />
+
+                    <TextView
+                        android:id="@+id/tvSubtotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€0,00"
+                        android:textColor="#212529"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <!-- Bezorgkosten -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Bezorgkosten"
+                        android:textColor="#495057" />
+
+                    <TextView
+                        android:id="@+id/tvDeliveryCost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€2,99"
+                        android:textColor="#212529"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#E9ECEF"
+                    android:layout_marginVertical="12dp" />
+
+                <!-- Totaal -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Totaalbedrag"
+                        android:textColor="#212529"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvFinalTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="€0,00"
+                        android:textColor="#06C167"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Bober Pas Activatie Knop (nu onder het kostenoverzicht) -->
+            <Button
+                android:id="@+id/btnUseBoberPass"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="#06C167"
+                android:text=" Bober Pas gebruiken"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!-- Bestelling Plaatsen Knop -->
+            <Button
+                android:id="@+id/btnPlaceOrder"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+                android:backgroundTint="#212529"
+                android:text="Bestelling definitief plaatsen"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Donkere achtergrondlaag voor het zijmenu / bottom sheet -->
+    <View
+        android:id="@+id/viewOverlay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#80000000"
+        android:elevation="8dp"
+        android:alpha="0"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Uitschuifbaar Zijmenu -->
+    <LinearLayout
+        android:id="@+id/layoutSideMenu"
+        android:layout_width="280dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:elevation="10dp"
+        android:orientation="vertical"
+        android:translationX="-300dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="140dp"
+            android:background="#06C167"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bober Eats"
+                android:textColor="#FFFFFF"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="Menu Opties"
+                android:textColor="#E9ECEF"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/menuLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Inloggen"
+            android:textColor="#212529"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F3F5" />
+
+        <TextView
+            android:id="@+id/menuAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Account aanmaken"
+            android:textColor="#212529"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F3F5" />
+
+        <TextView
+            android:id="@+id/menuBoberPas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Bober pas"
+            android:textColor="#212529"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#F1F3F5" />
+
+        <TextView
+            android:id="@+id/menuLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:clickable="true"
+            android:focusable="true"
+            android:padding="20dp"
+            android:text="Uitloggen"
+            android:textColor="#DC3545"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Uitschuifbaar Paneel (Bottom Sheet) voor de Bober Pas melding -->
+    <LinearLayout
+        android:id="@+id/layoutBottomSheetPass"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FFFFFF"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal"
+        android:visibility="gone"
+        android:translationY="1000dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHeight_percent="0.5">
+
+        <!-- Kleine streep bovenin het paneel -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            android:background="#CED4DA"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/tvSheetPassTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bober Pas Status"
+            android:textColor="#06C167"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/tvSheetPassDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Melding tekst..."
+            android:textColor="#495057"
+            android:textSize="14sp"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btnCloseSheetPass"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="#212529"
+            android:text="Begrepen"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <!-- Vaste Navigatiebalk onderaan -->
+    <View
+        android:id="@+id/bottomNavBg10"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/bottomNavDivider10"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E9ECEF"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavBg10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/btnNavHome10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg10"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavSearch10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg10">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Home"
+            app:srcCompat="@drawable/schermafbeelding_2026_09_29_114113"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Home"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnNavSearch10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg10"
+        app:layout_constraintEnd_toStartOf="@+id/btnNavCart10"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavHome10"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg10">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Search"
+            app:srcCompat="@drawable/icons8_search_50"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Search"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btnNavCart10"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavBg10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnNavSearch10"
+        app:layout_constraintTop_toTopOf="@+id/bottomNavBg10">
+
+        <ImageView
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:contentDescription="Cart"
+            app:srcCompat="@drawable/icons8_cart_48"
+            app:tint="#212529" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Cart"
+            android:textColor="#212529"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

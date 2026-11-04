@@ -26,18 +26,21 @@ class MainActivity6 : AppCompatActivity() {
 
         val etName = findViewById<EditText>(R.id.etName)
         val etEmail = findViewById<EditText>(R.id.etEmail)
+        val etPassword = findViewById<EditText>(R.id.etPassword)
         val btnRegister = findViewById<Button>(R.id.btnRegister)
 
         btnRegister?.setOnClickListener {
             val name = etName?.text.toString().trim()
             val email = etEmail?.text.toString().trim()
+            val password = etPassword?.text.toString().trim()
 
-            if (name.isNotEmpty() && email.isNotEmpty()) {
-                // Sla de accountgegevens lokaal op (SharedPreferences)
+            if (name.isNotEmpty() && email.isNotEmpty() && password.isNotEmpty()) {
+                // Sla naam, e-mail én wachtwoord op
                 val sharedPreferences = getSharedPreferences("BoberPrefs", Context.MODE_PRIVATE)
                 val editor = sharedPreferences.edit()
                 editor.putString("USER_NAME", name)
                 editor.putString("USER_EMAIL", email)
+                editor.putString("USER_PASSWORD", password)
                 editor.apply()
 
                 Toast.makeText(this, "Welkom $name! Account aangemaakt en ingelogd.", Toast.LENGTH_LONG).show()
